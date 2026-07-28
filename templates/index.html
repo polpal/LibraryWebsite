@@ -1,9 +1,43 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="bn">
 
-{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
 
-<h2>Home</h2>
+<body>
 
-<p>Welcome to our Library Management System.</p>
+    <h1>লাইব্রেরির বই</h1>
 
-{% endblock %}
+    <table border="1">
+
+        <tr>
+           
+            <th>Writer</th>
+            <th>Sln</th>
+            <th>bookname</th>
+             <th>Subject</th>
+              <th>bookNumber</th>
+        </tr>
+
+        {% for book in books %}
+
+        <tr>
+
+            <td>{{ book.Writer }}</td>
+
+            <td>{{ book.Sln}}</td>
+
+            <td>{{ book.bookname}}</td>
+             <td>{{ book.Subject}}</td>
+              <td>{{ book.bookNumber}}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
