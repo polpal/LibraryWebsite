@@ -78,6 +78,7 @@
                         <th>বইয়ের নাম</th>
 
                         <th>লেখক</th>
+                       <th>বিষয়</th> 
 
                         <th>অবস্থা</th>
 
@@ -88,57 +89,21 @@
 
                 <tbody>
 
-                    {% for book in books %}
+{% for book in books %}
 
-                    <tr>
+<tr>
 
-                        <td>
-                            {{ book.serial }}
-                        </td>
+    <td>{{ book["accession_no"] }}</td>
+    <td>{{ book["title"] }}</td>
+    <td>{{ book["author"] }}</td>
+    <td>{{ book["category"] }}</td>
+    <td>{{ book["status"] }}</td>
 
-                        <td>
-                            {{ book.name }}
-                        </td>
+</tr>
 
-                        <td>
-                            {{ book.author }}
-                        </td>
+{% endfor %}
 
-                        <td>
-
-                            {% if book.status == "Issued" %}
-
-                                <span class="badge bg-danger">
-                                    Issued
-                                </span>
-
-                            {% else %}
-
-                                <span class="badge bg-success">
-                                    Available
-                                </span>
-
-                            {% endif %}
-
-                        </td>
-
-                    </tr>
-
-                    {% else %}
-
-                    <tr>
-
-                        <td colspan="4" class="text-center">
-
-                            কোনো বই পাওয়া যায়নি।
-
-                        </td>
-
-                    </tr>
-
-                    {% endfor %}
-
-                </tbody>
+</tbody>
 
             </table>
 
